@@ -1,12 +1,21 @@
 from sklearn.pipeline import Pipeline
+
 from sklearn.compose import ColumnTransformer
+
 from sklearn.impute import SimpleImputer
+
 from sklearn.preprocessing import (
-StandardScaler,
-OneHotEncode
+    StandardScaler,
+    OneHotEncoder
 )
-def build_preprocessor(numeric_features,categorical_features):
-  numeric_pipeline = Pipeline(
+
+
+def build_preprocessor(
+    numeric_features,
+    categorical_features
+):
+
+    numeric_pipeline = Pipeline(
         steps=[
             (
                 "imputer",
@@ -18,7 +27,8 @@ def build_preprocessor(numeric_features,categorical_features):
             )
         ]
     )
-  categorical_pipeline = Pipeline(
+
+    categorical_pipeline = Pipeline(
         steps=[
             (
                 "imputer",
@@ -31,8 +41,9 @@ def build_preprocessor(numeric_features,categorical_features):
                 )
             )
         ]
-  )
-   preprocessor = ColumnTransformer(
+    )
+
+    preprocessor = ColumnTransformer(
         transformers=[
             (
                 "num",
