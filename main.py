@@ -29,14 +29,14 @@ def load_dataset():
 
 if __name__ == "__main__":
 
-    print("=" * 60)
+    
 
     print(
         "ADVANCED LINEAR "
         "REGRESSION PIPELINE"
     )
 
-    print("=" * 60)
+    
 
     df = load_dataset()
 
