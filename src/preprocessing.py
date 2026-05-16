@@ -1,19 +1,10 @@
 from sklearn.pipeline import Pipeline
-
 from sklearn.compose import ColumnTransformer
-
 from sklearn.impute import SimpleImputer
-
-from sklearn.preprocessing import (
-    StandardScaler,
-    OneHotEncoder
-)
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 
 
-def build_preprocessor(
-    numeric_features,
-    categorical_features
-):
+def build_preprocessor(numeric_features, categorical_features):
 
     numeric_pipeline = Pipeline(
         steps=[
@@ -36,9 +27,7 @@ def build_preprocessor(
             ),
             (
                 "encoder",
-                OneHotEncoder(
-                    handle_unknown="ignore"
-                )
+                OneHotEncoder(handle_unknown="ignore")
             )
         ]
     )
